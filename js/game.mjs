@@ -14,7 +14,7 @@ class Game {
     this.spotlight = new Spotlight(this.canvas);
 
     const loop = () => {
-      //   this.checkAllCollisions();
+      this.checkAllCollisions();
       this.updateCanvas();
       this.clearCanvas();
       this.drawCanvas();
@@ -32,8 +32,12 @@ class Game {
   }
   drawCanvas() {
     this.player.draw();
-    
+
     this.spotlight.draw();
+  }
+  checkAllCollisions() {
+    this.spotlight.checkScreen();
+
   }
 
   clearCanvas() {
