@@ -10,8 +10,7 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: auto;
 }
 
 /* ---- typography ---- */
@@ -41,21 +40,14 @@ p {
 
 canvas {
   border: 2px solid black;
-  width: 100%;
+  background-color: rgba(0, 0, 0, 0.727);
   height: 100%;
-
-  margin: auto;
-}
-@media (min-width: 768px) {
-  .container {
-    max-width: 728px;
-    margin: 0 auto;
-  }
 }
 
 /* ---- section ---- */
 
 .game-screen {
-  width: 100%;
+  display: flex;
+  width: 100vw;
   height: 100vh;
 }
