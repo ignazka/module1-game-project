@@ -1,9 +1,9 @@
 import Spotlight from "./spotlight.mjs";
 
-
 class Player {
   constructor(canvas, lives, spotlight) {
     this.radius = 10;
+    this.lives = lives;
     this.canvas = canvas;
     this.spotlight = spotlight;
     this.spotlight = new Spotlight(this.canvas);
@@ -13,8 +13,6 @@ class Player {
     this.speed = 5;
     this.directionY = 0;
     this.directionX = 0;
-
-    this.lives = lives;
   }
   update() {
     this.y = this.y + this.directionY * this.speed;
@@ -22,9 +20,9 @@ class Player {
   }
 
   draw() {
-    this.ctx.beginPath()
+    this.ctx.beginPath();
     this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
-    this.ctx.fillStyle = 'red';
+    this.ctx.fillStyle = "red";
     this.ctx.fill();
   }
 
@@ -43,8 +41,13 @@ class Player {
     const checkLeft = this.x - this.radius < spotlight.x - spotlight.radius;
     const checkRight = this.x + this.radius > spotlight.x + spotlight.radius;
 
-    return checkTop || checkBottom || checkLeft || checkRight
+    return checkTop || checkBottom || checkLeft || checkRight;
   }
+
+  loseLive() {
+    this.lives--;
+  }
+
 }
 
 export default Player;

@@ -65,12 +65,15 @@ function buildGameScreen() {
 function buildGameOver() {
   buildDom(`
         <section class="game-over">
-          <h1>Game Over Screen</h1>
-          <button>Restart</button>
+          <h1>Game Over</h1>
+          <button id="btn-restart">Restart</button>
+          <button id="btn-main-menu">Main Menu</button>
         </section>
       `);
-  const btnRestart = document.querySelector("button");
+  const btnRestart = document.querySelector("#btn-restart");
   btnRestart.addEventListener("click", buildGameScreen);
+  const btnMainMenu = document.querySelector("#btn-main-menu")
+  btnMainMenu.addEventListener("click", buildSplashScreen);
 }
 
 const main = () => {

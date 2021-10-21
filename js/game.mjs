@@ -39,6 +39,11 @@ class Game {
     if (this.player.checkCollisions(this.spotlight)) {
       this.player.x = this.spotlight.x;
       this.player.y = this.spotlight.y;
+      this.player.loseLive()
+      if (this.player.lives === 0) {
+        this.isGameOver = true;
+        this.onGameOver();
+      }
     }
   }
 
