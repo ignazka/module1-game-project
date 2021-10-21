@@ -10,8 +10,8 @@ class Game {
     this.isGameOver = false;
   }
   startLoop() {
-    this.player = new Player(this.canvas, 3);
     this.spotlight = new Spotlight(this.canvas);
+    this.player = new Player(this.canvas, 3, this.spotlight);
 
     const loop = () => {
       this.checkAllCollisions();
@@ -32,12 +32,14 @@ class Game {
   }
   drawCanvas() {
     this.player.draw();
-
     this.spotlight.draw();
   }
   checkAllCollisions() {
     this.spotlight.checkScreen();
-
+    if (this.player.checkCollisions(this.spotlight)) {
+      this.player.x = this.spotlight.x;
+      this.player.y = this.spotlight.y;
+    }
   }
 
   clearCanvas() {

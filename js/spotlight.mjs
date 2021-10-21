@@ -1,7 +1,7 @@
 class Spotlight {
   constructor(canvas) {
-    this.speed = 5;
-    this.radius = 100;
+    this.speed = 2;
+    this.radius = 200;
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
     this.x = this.canvas.width / 2;
@@ -16,11 +16,12 @@ class Spotlight {
   //   }
 
   draw() {
-    if (Math.random() > 0.90) {
-
-      this.x = this.x + (Math.floor((Math.random()) * this.speed)) * this.directionX;
+    if (Math.random() > 0.9) {
+      this.x =
+        this.x + Math.floor(Math.random() * this.speed) * this.directionX;
     } else {
-      this.y = this.y + (Math.floor((Math.random()) * this.speed)) * this.directionY;
+      this.y =
+        this.y + Math.floor(Math.random() * this.speed) * this.directionY;
     }
 
     this.ctx.beginPath(); //drawing circle
@@ -45,11 +46,9 @@ class Spotlight {
 
     if (this.x - this.radius <= 0) {
       this.directionX = 1;
-    }
-    else if (this.x + this.radius >= this.canvas.width) {
+    } else if (this.x + this.radius >= this.canvas.width) {
       this.directionX = -1;
     }
   }
-
 }
 export default Spotlight;

@@ -47,9 +47,19 @@ function buildGameScreen() {
     } else if (event.code === "ArrowRight") {
       game.player.setDirectionX(1);
     }
+
   };
 
+
+  const resetPlayerDirection = () => {
+    game.player.setDirectionX(0);
+    game.player.setDirectionY(0);
+
+  }
   document.addEventListener("keydown", setPlayerDirection);
+
+  // stop player movement after key release
+  document.addEventListener('keyup', resetPlayerDirection);
 }
 
 function buildGameOver() {
