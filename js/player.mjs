@@ -31,24 +31,7 @@ class Player {
   }
 
   accelerate() {
-    const action = {
-      fast() { this.speed === 10; },
-      slow() { this.speed === 2; },
-    };
 
-    const keyAction = {
-      space: { keydown: action.fast, keyup: action.slow },
-    };
-
-    const keyHandler = (event) => {
-      if (event.repeat) return;
-      if (!(event.key in keyAction) || !(event.type in keyAction[event.key])) return;
-      keyAction[event.key][event.type]();
-    };
-
-    ['keydown', 'keyup'].forEach((eventType) => {
-      document.body.addEventListener(eventType, keyHandler);
-    });
   }
 
 
@@ -80,20 +63,20 @@ class Player {
     const liveBoard = document.querySelector('.lives');
     if (this.lives === 3) {
       liveBoard.innerHTML = `
-      <img src='../images/heart.png' />
-      <img src='../images/heart.png' />
-      <img src='../images/heart.png' />
+      <img src='/images/heart.png' />
+      <img src='/images/heart.png' />
+      <img src='/images/heart.png' />
       `;
     }
     if (this.lives === 2) {
       liveBoard.innerHTML = `
-      <img src='../images/heart.png' />
-      <img src='../images/heart.png' />
+      <img src='/images/heart.png' />
+      <img src='/images/heart.png' />
       `;
     }
     if (this.lives === 1) {
       liveBoard.innerHTML = `
-      <img src='../images/heart.png' />
+      <img src='/images/heart.png' />
       `;
     }
 
