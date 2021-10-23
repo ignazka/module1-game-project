@@ -11,27 +11,30 @@ function buildSplashScreen() {
   buildDom(`
         <section class="splash-screen">
         <h1>Spotlight! the game</h1>
-        <p>choose difficulty<p>
-        <button id="easy-mode">easy</button>
-        <button id="hard-mode">hard</button>
+        
+        <button id="start-btn">start</button>
+      
         </section>
         `);
-  const btnEasy = document.querySelector("#easy-mode");
-  btnEasy.addEventListener("click", buildGameScreen);
+  const btnStart = document.querySelector("#start-btn");
+  btnStart.addEventListener("click", buildGameScreen);
 }
 
 function buildGameScreen() {
   buildDom(`
         <section class="game-screen">
+        <p>Score:</p>
+        <div class="score"></div>
         <canvas></canvas>
         </section>
     `);
+
   const canvasElement = document.querySelector("canvas");
+  const game = new Game(canvasElement);
+
   canvasElement.width = window.innerWidth;
   canvasElement.height = window.innerHeight;
-  console.log(canvasElement);
 
-  const game = new Game(canvasElement);
   game.gameOverCallback(buildGameOver);
 
   game.startLoop();
@@ -47,19 +50,16 @@ function buildGameScreen() {
     } else if (event.code === "ArrowRight") {
       game.player.setDirectionX(1);
     }
-
   };
-
 
   const resetPlayerDirection = () => {
     game.player.setDirectionX(0);
     game.player.setDirectionY(0);
-
-  }
+  };
   document.addEventListener("keydown", setPlayerDirection);
 
   // stop player movement after key release
-  document.addEventListener('keyup', resetPlayerDirection);
+  document.addEventListener("keyup", resetPlayerDirection);
 }
 
 function buildGameOver() {
@@ -67,13 +67,13 @@ function buildGameOver() {
         <section class="game-over">
           <h1>Game Over</h1>
           <button id="btn-restart">Restart</button>
-          <button id="btn-main-menu">Main Menu</button>
+          <p>Final Score:</p>
+          <div class="score"></div>
+        
         </section>
       `);
   const btnRestart = document.querySelector("#btn-restart");
   btnRestart.addEventListener("click", buildGameScreen);
-  const btnMainMenu = document.querySelector("#btn-main-menu")
-  btnMainMenu.addEventListener("click", buildSplashScreen);
 }
 
 const main = () => {

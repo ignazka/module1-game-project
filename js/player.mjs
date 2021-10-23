@@ -1,12 +1,12 @@
-import Spotlight from "./spotlight.mjs";
+import Game from "./game.mjs";
 
 class Player {
   constructor(canvas, lives, spotlight) {
-    this.radius = 10;
+    this.radius = 20;
     this.lives = lives;
     this.canvas = canvas;
     this.spotlight = spotlight;
-    this.spotlight = new Spotlight(this.canvas);
+    this.game = new Game(this.canvas);
     this.ctx = this.canvas.getContext("2d");
     this.x = this.canvas.width / 2;
     this.y = this.canvas.height / 2;
@@ -20,7 +20,11 @@ class Player {
   }
 
   draw() {
+    // let img = new Image();
+    // img.src = "../images/player-phase1.png"
     this.ctx.beginPath();
+    // this.ctx.drawImage(img, this.x, this.y, 20, 20)
+
     this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
     this.ctx.fillStyle = "red";
     this.ctx.fill();
@@ -47,7 +51,6 @@ class Player {
   loseLive() {
     this.lives--;
   }
-
 }
 
 export default Player;
