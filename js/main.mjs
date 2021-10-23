@@ -13,7 +13,7 @@ function buildSplashScreen() {
   buildDom(`
         <section class="splash-screen">
         <h1>Spotlight!</h1>
-        <h2> the game</h2>
+        <h2>THE GAME</h2>
         
         
        
@@ -98,7 +98,7 @@ function buildGameScreen() {
 function buildGameOver() {
   buildDom(`
         <section class="game-over">
-          <h1>Game Over</h1>
+          <h1>GAME OVER</h1>
           <div class="box-3">
           <div class="btn btn-restart">
             <span>TRY AGAIN</span>

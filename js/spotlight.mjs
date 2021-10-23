@@ -8,6 +8,7 @@ class Spotlight {
     this.y = this.canvas.height / 2;
     this.directionY = 1;
     this.directionX = 1;
+
   }
 
 
