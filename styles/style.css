@@ -1,3 +1,11 @@
+:root {
+  --black: #0a0908;
+  --dark-grey: #22333b;
+  --grey: #eae0d5;
+  --light-brown: #c6ac8f;
+  --dark-brown: #5e503f;
+}
+
 /* ---- reset ---- */
 
 html {
@@ -11,17 +19,21 @@ html {
 
 body {
   margin: auto;
+  height: 100vh;
 }
 
 /* ---- typography ---- */
 
 body {
-  color: #111;
-  font-family: Helvetica, Arial, sans-serif;
+  color: var(--black);
+
+  font-family: "DotGothic16", sans-serif;
   font-size: 16px;
 }
 
 h1 {
+  color: var(--dark-brown);
+  font-size: 3em;
 }
 
 h2 {
@@ -35,18 +47,227 @@ p {
 }
 /* ---- layout ---- */
 
-.container {
+.btn {
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  width: 250px;
+  cursor: pointer;
+  font-size: 1.4em;
 }
 
 canvas {
+  display: flex;
+  align-items: center;
   border: 2px solid black;
-  background-color: rgba(0, 0, 0, 0.727);
-  height: 50%;
+  background-color: rgba(65, 64, 64, 0.185);
+  /* height: 50%; */
+  margin: auto;
+  width: 80vw;
+}
+
+p {
+  padding-bottom: 10px;
+  color: var(--dark-brown);
+  font-size: 2em;
+}
+.score {
+  color: var(--grey);
+  font-size: 2.2em;
 }
 
 /* ---- section ---- */
 
+.splash-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  height: 100vh;
+
+  background-color: var(--dark-grey);
+  color: var(--grey);
+}
+
+/* .splash-screen button {
+  background-color: var(--light-brown);
+  border: none;
+  color: var(--dark-brown);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+}
+.splash-screen button:hover {
+  background-color: var(--dark-brown);
+  border: none;
+  color: var(--light-brown);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+} */
+
 .game-screen {
   display: flex;
-  height: 80vh;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--dark-grey);
+  color: var(--grey);
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: center;
+}
+
+#scoreBoard {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+.lives {
+  display: flex;
+  align-items: flex-end;
+  width: 50%;
+  align-content: center;
+  justify-content: flex-end;
+}
+
+.lives img {
+  height: 50px;
+  padding-top: 20px;
+}
+
+#hud {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.game-over {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  height: 100vh;
+
+  background-color: var(--dark-grey);
+  color: var(--grey);
+}
+
+/* .game-over button {
+  background-color: var(--light-brown);
+  border: none;
+  color: var(--dark-brown);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+} */
+/* .game-over button:hover {
+  background-color: var(--dark-brown);
+  border: none;
+  color: var(--light-brown);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+} */
+
+#final-score {
+  display: flex;
+  padding-top: 20px;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.btn-start {
+  color: var(--grey);
+  transition: all 0.5s;
+  position: relative;
+}
+.btn-start::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+.btn-start:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+.btn-start::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid var(--light-brown);
+  transform: scale(1.2, 1.2);
+}
+.btn-start:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.btn-restart {
+  color: var(--grey);
+  transition: all 0.5s;
+  position: relative;
+}
+.btn-restart::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+.btn-restart:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+.btn-restart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid var(--light-brown);
+  transform: scale(1.2, 1.2);
+}
+.btn-restart:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
 }

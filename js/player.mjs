@@ -10,7 +10,7 @@ class Player {
     this.ctx = this.canvas.getContext("2d");
     this.x = this.canvas.width / 2;
     this.y = this.canvas.height / 2;
-    this.speed = 5;
+    this.speed = 2;
     this.directionY = 0;
     this.directionX = 0;
   }
@@ -29,6 +29,29 @@ class Player {
     this.ctx.fillStyle = "red";
     this.ctx.fill();
   }
+
+  accelerate() {
+    const action = {
+      fast() { this.speed === 10; },
+      slow() { this.speed === 2; },
+    };
+
+    const keyAction = {
+      space: { keydown: action.fast, keyup: action.slow },
+    };
+
+    const keyHandler = (event) => {
+      if (event.repeat) return;
+      if (!(event.key in keyAction) || !(event.type in keyAction[event.key])) return;
+      keyAction[event.key][event.type]();
+    };
+
+    ['keydown', 'keyup'].forEach((eventType) => {
+      document.body.addEventListener(eventType, keyHandler);
+    });
+  }
+
+
 
   setDirectionY(direction) {
     this.directionY = direction;
@@ -51,6 +74,29 @@ class Player {
   loseLive() {
     this.lives--;
   }
-}
 
+
+  drawLives() {
+    const liveBoard = document.querySelector('.lives');
+    if (this.lives === 3) {
+      liveBoard.innerHTML = `
+      <img src='../images/heart.png' />
+      <img src='../images/heart.png' />
+      <img src='../images/heart.png' />
+      `;
+    }
+    if (this.lives === 2) {
+      liveBoard.innerHTML = `
+      <img src='../images/heart.png' />
+      <img src='../images/heart.png' />
+      `;
+    }
+    if (this.lives === 1) {
+      liveBoard.innerHTML = `
+      <img src='../images/heart.png' />
+      `;
+    }
+
+  }
+}
 export default Player;

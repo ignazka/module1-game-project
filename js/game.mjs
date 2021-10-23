@@ -36,6 +36,7 @@ class Game {
   drawCanvas() {
     this.player.draw();
     this.spotlight.draw();
+    this.player.drawLives();
   }
   checkAllCollisions() {
     this.spotlight.checkScreen();
@@ -60,13 +61,13 @@ class Game {
   playerScore() {
     if (!this.isGameOver) {
       const intervalId = setInterval(() => {
-        this.score += 0.001;
+        this.score += 0.01;
         const scoreElement = document.querySelector(".score");
-        scoreElement.innerHTML = `${Math.floor(this.score)}`;
+        scoreElement.innerHTML = ` ${Math.floor(this.score)}`;
         if (this.isGameOver) {
           clearInterval(intervalId);
         }
-      }, 1);
+      }, 10);
     }
   }
 }

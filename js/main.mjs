@@ -7,24 +7,37 @@ function buildDom(html) {
   main.innerHTML = html;
 }
 
+
+
 function buildSplashScreen() {
   buildDom(`
         <section class="splash-screen">
-        <h1>Spotlight! the game</h1>
+        <h1>Spotlight!</h1>
+        <h2> the game</h2>
         
-        <button id="start-btn">start</button>
+        
+       
+  <div class="btn btn-start">
+    <span>START</span>
+  </div>
+
       
         </section>
         `);
-  const btnStart = document.querySelector("#start-btn");
+  const btnStart = document.querySelector(".btn-start");
   btnStart.addEventListener("click", buildGameScreen);
 }
 
 function buildGameScreen() {
   buildDom(`
         <section class="game-screen">
-        <p>Score:</p>
+        <div id="hud">
+        <div id="scoreBoard">
+        <p>SCORE: </p>
         <div class="score"></div>
+        </div>
+        <div class="lives"></div>
+        </div>
         <canvas></canvas>
         </section>
     `);
@@ -50,6 +63,26 @@ function buildGameScreen() {
     } else if (event.code === "ArrowRight") {
       game.player.setDirectionX(1);
     }
+    if (event.code === "Space") {
+      const action = {
+        fast() { this.speed === 10; },
+        slow() { this.speed === 2; },
+      };
+
+      const keyAction = {
+        space: { keydown: action.fast, keyup: action.slow },
+      };
+
+      const keyHandler = (event) => {
+        if (event.repeat) return;
+        if (!(event.key in keyAction) || !(event.type in keyAction[event.key])) return;
+        keyAction[event.key][event.type]();
+      };
+
+      ['keydown', 'keyup'].forEach((eventType) => {
+        document.body.addEventListener(eventType, keyHandler);
+      });
+    }
   };
 
   const resetPlayerDirection = () => {
@@ -66,13 +99,19 @@ function buildGameOver() {
   buildDom(`
         <section class="game-over">
           <h1>Game Over</h1>
-          <button id="btn-restart">Restart</button>
-          <p>Final Score:</p>
+          <div class="box-3">
+          <div class="btn btn-restart">
+            <span>TRY AGAIN</span>
+          </div>
+        </div>
+          <div id="final-score">
+          <p>FINAL SCORE:</p>
           <div class="score"></div>
+          </div>
         
         </section>
       `);
-  const btnRestart = document.querySelector("#btn-restart");
+  const btnRestart = document.querySelector(".btn-restart");
   btnRestart.addEventListener("click", buildGameScreen);
 }
 

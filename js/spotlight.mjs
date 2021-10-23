@@ -10,10 +10,6 @@ class Spotlight {
     this.directionX = 1;
   }
 
-  //   update(speed) {
-  //     this.speed = speed;
-  //     Math.floor(Math.random()) * 2 === this.directionX;
-  //   }
 
   draw() {
     if (Math.random() > 0.9) {
@@ -24,15 +20,12 @@ class Spotlight {
         this.y + Math.floor(Math.random() * this.speed) * this.directionY;
     }
 
-    this.ctx.beginPath(); //drawing circle
+    this.ctx.beginPath();
     this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
-    // if (Math.random() > 0.97) {
-    //   this.ctx.fillStyle = "#FFE433"; //color
-    //   this.ctx.globalAlpha = 0.8;
-    // } else {
-    this.ctx.fillStyle = "#FFE433"; //color
+
+    this.ctx.fillStyle = "#FFE433";
     this.ctx.globalAlpha = 0.2;
-    // }
+
 
     this.ctx.fill();
   }
@@ -65,18 +58,18 @@ class Spotlight {
     }
 
     if (score > 3000 && score < 5000) {
-      this.radius = 100;
-      // this.speed = 11;
+      this.radius = 200;
+      this.speed = 7;
     }
 
     if (score > 5000 && score < 10000) {
-      this.radius = 90;
+      this.radius = 150;
       // this.speed = 12;
     }
 
     if (score > 10000) {
-      this.radius = 50;
-      // this.speed = 15;
+      this.radius = 100;
+      this.speed = 15;
     }
   }
 }
