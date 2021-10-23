@@ -63,20 +63,20 @@ class Player {
     const liveBoard = document.querySelector('.lives');
     if (this.lives === 3) {
       liveBoard.innerHTML = `
-      <img src='/images/heart.png' />
-      <img src='/images/heart.png' />
-      <img src='/images/heart.png' />
+      <img src='images/heart.png' />
+      <img src='images/heart.png' />
+      <img src='images/heart.png' />
       `;
     }
     if (this.lives === 2) {
       liveBoard.innerHTML = `
-      <img src='/images/heart.png' />
-      <img src='/images/heart.png' />
+      <img src='images/heart.png' />
+      <img src='images/heart.png' />
       `;
     }
     if (this.lives === 1) {
       liveBoard.innerHTML = `
-      <img src='/images/heart.png' />
+      <img src='images/heart.png' />
       `;
     }
 
