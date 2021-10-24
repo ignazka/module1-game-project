@@ -63,7 +63,7 @@ class Game {
       const intervalId = setInterval(() => {
         this.score += 0.01;
         const scoreElement = document.querySelector(".score");
-        scoreElement.innerHTML = ` ${Math.floor(this.score)}`;
+        scoreElement.innerHTML = ` ${this.score.toFixed(0)}`;
         if (this.isGameOver) {
           clearInterval(intervalId);
         }

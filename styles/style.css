@@ -116,9 +116,6 @@ p {
 .score {
   color: var(--grey);
   font-size: 2.2em;
-
-  /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, */
-  /* 1px 1px 0 #000; */
 }
 
 /* ---- section ---- */
@@ -134,27 +131,6 @@ p {
   background-color: var(--dark-grey);
   color: var(--grey);
 }
-
-/* .splash-screen button {
-  background-color: var(--light-brown);
-  border: none;
-  color: var(--dark-brown);
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30px;
-}
-.splash-screen button:hover {
-  background-color: var(--dark-brown);
-  border: none;
-  color: var(--light-brown);
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30px;
-} */
 
 .game-screen {
   display: flex;
@@ -210,27 +186,6 @@ p {
   color: var(--grey);
 }
 
-/* .game-over button {
-  background-color: var(--light-brown);
-  border: none;
-  color: var(--dark-brown);
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30px;
-} */
-/* .game-over button:hover {
-  background-color: var(--dark-brown);
-  border: none;
-  color: var(--light-brown);
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 30px;
-} */
-
 #final-score {
   display: flex;
   padding-top: 20px;
@@ -240,7 +195,7 @@ p {
   flex-wrap: nowrap;
   flex-direction: column;
 }
-
+/* animated start button */
 .btn-start {
   color: var(--grey);
   transition: all 0.5s;
@@ -278,7 +233,7 @@ p {
   opacity: 1;
   transform: scale(1, 1);
 }
-
+/* animated restart button */
 .btn-restart {
   color: var(--grey);
   transition: all 0.5s;
