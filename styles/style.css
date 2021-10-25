@@ -31,12 +31,6 @@ body {
   font-size: 16px;
 }
 
-h2 {
-}
-
-h3 {
-}
-
 p {
   margin: 0;
 }
@@ -76,14 +70,10 @@ section {
 }
 
 canvas {
-  display: flex;
-  align-items: center;
-  border: 2px solid black;
-  background-color: #262626;
+  background-color: var(--dark-grey);
   /* height: 50%; */
-  margin: auto;
-  width: 80vw;
-  z-index: 999;
+  width: 100vw;
+  height: 90vh;
 }
 
 h1 {
@@ -100,16 +90,14 @@ h1 {
 
 h2 {
   color: var(--dark-grey);
-
-  font-size: 2em;
-
+  font-size: 2.4em;
   margin: 0;
   padding-bottom: 50px;
 }
 
 p {
   color: var(--light-brown);
-  font-size: 2em;
+  font-size: 2.3em;
   text-shadow: -1px -1px 0 var(--dark-brown), 1px -1px 0 var(--dark-brown),
     -1px 1px 0 var(--dark-grey), 1px 1px 0 #000;
 }
@@ -118,12 +106,15 @@ p {
   font-size: 2.2em;
 }
 
-#howToPlay {
-  align-items: center;
-  margin: auto;
-}
 #howToPlay span:last-child {
   color: var(--light-brown);
+}
+
+#scoreBoard p {
+  font-size: 1.5em;
+}
+#scoreBoard {
+  width: 33%;
 }
 
 /* ---- section ---- */
@@ -150,35 +141,32 @@ p {
   flex-wrap: nowrap;
   flex-direction: column;
   align-content: center;
-  padding: 25px 50px;
 }
 
 #scoreBoard {
   display: flex;
   flex-direction: column;
   align-content: center;
-  flex-wrap: nowrap;
   justify-content: center;
+
   align-items: flex-start;
-  padding-top: 20px;
 }
 
 .lives {
   display: flex;
-  align-items: flex-end;
-  width: 10%;
   align-content: center;
+  width: 33%;
   justify-content: flex-end;
 }
 
 .lives img {
-  height: 60px;
+  height: 40px;
 }
 
 #hud {
   display: flex;
-  width: 100%;
-  justify-content: space-around;
+  width: 88%;
+  justify-content: space-between;
   align-items: center;
 }
 

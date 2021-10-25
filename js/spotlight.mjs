@@ -1,6 +1,6 @@
 class Spotlight {
   constructor(canvas) {
-    this.speed = 5;
+    this.speed = 2;
     this.radius = 200;
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
@@ -13,13 +13,13 @@ class Spotlight {
 
 
   draw() {
-    if (Math.random() > 0.9) {
-      this.x =
-        this.x + Math.floor(Math.random() * this.speed) * this.directionX;
-    } else {
-      this.y =
-        this.y + Math.floor(Math.random() * this.speed) * this.directionY;
-    }
+    // if (Math.random() > 0.2) {
+    this.x =
+      this.x + (Math.random() * this.speed) * this.directionX;
+    // }
+    this.y =
+      this.y + (Math.random() * this.speed) * this.directionY;
+
 
     this.ctx.beginPath();
     this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
@@ -47,20 +47,20 @@ class Spotlight {
   setDifficulty(score) {
     if (score > 500 && score < 1000) {
       this.radius = 180;
-      // this.speed = 5;
+      this.speed = 3;
     }
     if (score > 1000 && score < 2000) {
       this.radius = 170;
-      // this.speed = 7;
+      this.speed = 4;
     }
     if (score > 2000 && score < 3000) {
       this.radius = 160;
-      // this.speed = 10;
+      this.speed = 5;
     }
 
     if (score > 3000 && score < 5000) {
       this.radius = 150;
-      // this.speed = 7;
+
     }
 
     if (score > 5000 && score < 10000) {

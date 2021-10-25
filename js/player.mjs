@@ -2,7 +2,7 @@ import Game from "./game.mjs";
 
 class Player {
   constructor(canvas, lives, spotlight) {
-    this.radius = 8;
+    this.radius = 5;
     this.lives = lives;
     this.canvas = canvas;
     this.spotlight = spotlight;
@@ -10,7 +10,7 @@ class Player {
     this.ctx = this.canvas.getContext("2d");
     this.x = this.canvas.width / 2;
     this.y = this.canvas.height / 2;
-    this.speed = 5;
+    this.speed = 8;
     this.directionY = 0;
     this.directionX = 0;
   }
