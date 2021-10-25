@@ -65,20 +65,20 @@ class Player {
       liveBoard.innerHTML = `
 
     
-      <img src='https://ignazka.github.io/spotlight/images/heart.png>
-      <img src='https://ignazka.github.io/spotlight/images/heart.png>
-      <img src='https://ignazka.github.io/spotlight/images/heart.png>
+      <img src='https://ignazka.github.io/spotlight/images/heart.png'>
+      <img src='https://ignazka.github.io/spotlight/images/heart.png'>
+      <img src='https://ignazka.github.io/spotlight/images/heart.png'>
       `;
     }
     if (this.lives === 2) {
       liveBoard.innerHTML = `
-      <img src='https://ignazka.github.io/spotlight/images/heart.png>
-      <img src='https://ignazka.github.io/spotlight/images/heart.png>
+      <img src='https://ignazka.github.io/spotlight/images/heart.png'>
+      <img src='https://ignazka.github.io/spotlight/images/heart.png'>
       `;
     }
     if (this.lives === 1) {
       liveBoard.innerHTML = `
-      <img src='https://ignazka.github.io/spotlight/images/heart.png>
+      <img src='https://ignazka.github.io/spotlight/images/heart.png'>
       `;
     }
 
