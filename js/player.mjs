@@ -21,7 +21,7 @@ class Player {
 
   draw() {
     // let img = new Image();
-    // img.src = "../images/player-phase1.png"
+    // img.src = "https://github.com/ignazka/spotlight/images/player-phase1.png"
     this.ctx.beginPath();
     // this.ctx.drawImage(img, this.x, this.y, 20, 20)
 
@@ -63,20 +63,20 @@ class Player {
     const liveBoard = document.querySelector('.lives');
     if (this.lives === 3) {
       liveBoard.innerHTML = `
-      <img src='../images/heart.png' />
-      <img src='../images/heart.png' />
-      <img src='../images/heart.png' />
+      <img src='https://github.com/ignazka/spotlight/tree/main/images/heart.png' />
+      <img src='https://github.com/ignazka/spotlight/tree/main/images/heart.png' />
+      <img src='https://github.com/ignazka/spotlight/tree/main/images/heart.png' />
       `;
     }
     if (this.lives === 2) {
       liveBoard.innerHTML = `
-      <img src='images/heart.png' />
-      <img src='images/heart.png' />
+      <img src='https://github.com/ignazka/spotlight/tree/main/images/heart.png' />
+      <img src='https://github.com/ignazka/spotlight/tree/main/images/heart.png' />
       `;
     }
     if (this.lives === 1) {
       liveBoard.innerHTML = `
-      <img src='images/heart.png' />
+      <img src='https://github.com/ignazka/spotlight/tree/main/images/heart.png' />
       `;
     }
 

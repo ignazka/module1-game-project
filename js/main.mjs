@@ -36,6 +36,9 @@ function buildGameScreen() {
         <p>SCORE: </p>
         <div class="score"></div>
         </div>
+        <div id="howToPlay">
+        <span>STAY IN THE CIRCLE!</span><br><span>USE ARROW KEYs TO MOVE</span>
+        </div>
         <div class="lives"></div>
         </div>
         <canvas></canvas>

@@ -118,6 +118,14 @@ p {
   font-size: 2.2em;
 }
 
+#howToPlay {
+  align-items: center;
+  margin: auto;
+}
+#howToPlay span:last-child {
+  color: var(--light-brown);
+}
+
 /* ---- section ---- */
 
 .splash-screen {
@@ -142,6 +150,7 @@ p {
   flex-wrap: nowrap;
   flex-direction: column;
   align-content: center;
+  padding: 25px 50px;
 }
 
 #scoreBoard {
@@ -157,14 +166,13 @@ p {
 .lives {
   display: flex;
   align-items: flex-end;
-  width: 50%;
+  width: 10%;
   align-content: center;
   justify-content: flex-end;
 }
 
 .lives img {
-  height: 50px;
-  padding-top: 20px;
+  height: 60px;
 }
 
 #hud {
