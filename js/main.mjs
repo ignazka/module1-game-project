@@ -35,7 +35,7 @@ function buildGameScreen() {
         <p>SCORE: </p>
         <div class="score"></div>
         </div>
-        <div id="howToPlay">
+        <div id="how-to-play">
         <span>STAY IN THE LIGHT!</span><br><span id="big-screen">USE MOUSE TO MOVE!</span>
         <span id="small-screen">TOUCH TO MOVE!</span>
         </div>

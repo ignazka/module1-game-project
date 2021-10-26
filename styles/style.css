@@ -73,8 +73,8 @@ section {
 canvas {
   background-color: var(--dark-grey);
   /* height: 50%; */
-  width: 100vw;
-  height: 90vh;
+  height: 84vh;
+  width: 95vw;
 }
 
 h1 {
@@ -107,7 +107,14 @@ p {
   font-size: 1.7em;
 }
 
-#howToPlay span:last-child {
+#how-to-play {
+  margin-left: 20px;
+}
+#how-to-play span {
+  padding-top: 5px;
+}
+
+#how-to-play span:last-child {
   color: var(--light-brown);
 }
 
@@ -178,6 +185,7 @@ p {
   width: 88%;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .game-over {
@@ -322,14 +330,14 @@ p {
 
   .score {
     color: var(--grey);
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   #scoreBoard p {
     font-size: 1em;
   }
 
   .lives img {
-    height: 20px;
+    height: 35px;
   }
 
   #small-screen {
@@ -338,5 +346,35 @@ p {
 
   #big-screen {
     display: none;
+  }
+
+  #final-score p {
+    font-size: 1em;
+  }
+  #final-score .score {
+    padding-top: 20px;
+    font-size: 2.2em;
+  }
+
+  #game-over {
+    width: 500px;
+  }
+
+  #hud {
+    width: 95%;
+    margin-bottom: 10px;
+  }
+
+  #how-to-play {
+    font-size: 0.6em;
+    line-height: 13px;
+  }
+  #img-subtitle {
+    width: 70%;
+  }
+
+  canvas {
+    height: 88vh;
+    width: 95vw;
   }
 }

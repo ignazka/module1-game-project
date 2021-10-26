@@ -1,8 +1,9 @@
 class Spotlight {
   constructor(canvas) {
-    this.speed = 2;
-    this.radius = 120;
+    this.speed = 3;
+
     this.canvas = canvas;
+    this.radius = this.canvas.height / 4;
     this.ctx = this.canvas.getContext("2d");
     this.x = this.canvas.width / 2;
     this.y = this.canvas.height / 2;
@@ -60,34 +61,33 @@ class Spotlight {
       this.speed = 4;
     }
     if (score > 2000 && score < 2500) {
-
-      this.radius = 100;
+      this.speed = 5;
     }
 
     if (score > 2500 && score < 3000) {
-      this.speed = 5;
-      this.radius = 90;
+
+      this.radius = this.canvas.height / 5;
     }
 
     if (score > 3000 && score < 3500) {
-      this.radius = 80;
+      this.radius = this.canvas.height / 6;
     }
 
     if (score > 3500 && score < 4000) {
-      this.radius = 70;
+      this.radius = this.canvas.height / 7;
     }
 
     if (score > 4000 && score < 4500) {
-      this.radius = 60;
+      this.radius = this.canvas.height / 8;
     }
     if (score > 4500 && score < 5000) {
-      this.radius = 50;
+      // this.radius = 50;
     }
     if (score > 5000 && score < 5500) {
-      this.radius = 40;
+      // this.radius = 40;
     }
     if (score > 5500) {
-      this.radius = 30;
+      // this.radius = 30;
     }
   }
 }
