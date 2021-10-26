@@ -278,7 +278,7 @@ p {
 }
 
 #big-screen {
-  color: var(--dark-brown);
+  color: var(--light-brown);
 }
 
 @media only screen and (max-width: 768px) {
