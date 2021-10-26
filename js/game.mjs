@@ -18,7 +18,7 @@ class Game {
 
     const loop = () => {
       this.playerScore();
-      // this.spotlight.setDifficulty(this.score);
+      this.spotlight.setDifficulty(this.score);
       this.checkAllCollisions();
       this.updateCanvas();
       this.clearCanvas();
