@@ -200,21 +200,30 @@ p {
   color: var(--grey);
 }
 
-#final-score {
+.ctn-final-score {
   display: flex;
   padding-top: 30px;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+}
+
+.ctn-final-score p {
+  padding-bottom: 10px;
+  font-size: 1.8em;
+}
+
+.ctn-score {
+  display: flex;
+  padding-top: 40px;
+  font-size: 0.7em;
   flex-direction: column;
+  align-items: center;
+  width: 50%;
 }
-#final-score p {
-  font-size: 1.4em;
-}
-#final-score .score {
-  padding-top: 20px;
-  font-size: 2.2em;
+
+.ctn-final-score .score {
+  font-size: 3.8em;
 }
 
 /* animated start button */
@@ -334,6 +343,7 @@ p {
   }
   #scoreBoard p {
     font-size: 1em;
+    width: 33%;
   }
 
   .lives img {
@@ -366,8 +376,9 @@ p {
   }
 
   #how-to-play {
-    font-size: 0.6em;
+    font-size: 0.55em;
     line-height: 13px;
+    width: 33%;
   }
   #img-subtitle {
     width: 70%;
@@ -376,5 +387,31 @@ p {
   canvas {
     height: 88vh;
     width: 95vw;
+  }
+
+  .ctn-final-score {
+    display: flex;
+    padding-top: 30px;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .ctn-final-score p {
+    padding-bottom: 10px;
+    font-size: 1.8em;
+  }
+
+  .ctn-score {
+    display: flex;
+    padding-top: 40px;
+    font-size: 0.5em;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+
+  .ctn-final-score .score {
+    font-size: 3.8em;
   }
 }

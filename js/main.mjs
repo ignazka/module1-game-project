@@ -62,6 +62,8 @@ function buildGameScreen() {
   document.addEventListener('mousemove', (event) => {
     game.player.setPosition(event.clientX, event.clientY);
   });
+
+
 }
 // const setPlayerDirection = (event) => {
 //   if (event.code === "ArrowUp") {
@@ -96,9 +98,15 @@ function buildGameOver() {
             <span>TRY AGAIN</span>
           </div>
         </div>
-          <div id="final-score">
-          <p>FINAL SCORE:</p>
+        <div class="ctn-final-score">
+          <div class="ctn-score">
+          <p>YOUR SCORE:</p>
           <div class="score"></div>
+          </div>
+          <div class="ctn-score">
+          <p>HIGHSCORE:</p>
+          <div id="highscore-div" class="score"></div>
+          </div>
           </div>
         
         </section>

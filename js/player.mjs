@@ -33,7 +33,6 @@ class Player {
 
   draw() {
 
-    console.log(this.x + this.y)
     // let img = new Image();
     // img.src = "https://github.com/ignazka/spotlight/images/player-phase1.png"
     this.ctx.beginPath();

@@ -16,8 +16,10 @@ class Game {
     this.player = new Player(this.canvas, 3, this.spotlight);
 
 
+
     const loop = () => {
       this.playerScore();
+
       this.spotlight.setDifficulty(this.score);
       this.checkAllCollisions();
       this.updateCanvas();
@@ -49,7 +51,9 @@ class Game {
       this.player.loseLive();
       if (this.player.lives === 0) {
         this.isGameOver = true;
+
         this.onGameOver();
+        this.setHighscore();
       }
     }
   }
@@ -57,8 +61,16 @@ class Game {
   clearCanvas() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
+
   gameOverCallback(callback) {
     this.onGameOver = callback;
+  }
+
+  setHighscore() {
+    if (window.localStorage.getItem('score').length === 0 || Number(window.localStorage.getItem('score')) < this.score) {
+      window.localStorage.setItem('score', this.score.toFixed(0));
+    }
+    document.querySelector('#highscore-div').innerHTML = `${window.localStorage.getItem('score')}`;
   }
 
   playerScore() {
@@ -70,7 +82,7 @@ class Game {
         if (this.isGameOver) {
           clearInterval(intervalId);
         }
-      }, 10);
+      }, 1);
     }
   }
 }
