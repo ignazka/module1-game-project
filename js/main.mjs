@@ -8,7 +8,6 @@ function buildDom(html) {
 }
 
 
-
 function buildSplashScreen() {
   buildDom(`
         <section class="splash-screen">
@@ -112,4 +111,9 @@ const main = () => {
   buildSplashScreen();
 };
 
-window.addEventListener("load", main);
+window.addEventListener("load", () => {
+  main();
+  if (window.innerWidth < 500) {
+    document.documentElement.webkitRequestFullScreen()
+  }
+});
