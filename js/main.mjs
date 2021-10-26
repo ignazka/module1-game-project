@@ -111,9 +111,4 @@ const main = () => {
   buildSplashScreen();
 };
 
-window.addEventListener("load", () => {
-  main();
-  if (window.innerWidth < 500) {
-    document.documentElement.webkitRequestFullScreen()
-  }
-});
+window.addEventListener("load", main);
