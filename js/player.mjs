@@ -73,7 +73,7 @@ class Player {
     const liveBoard = document.querySelector('.lives');
     if (this.lives === 3) {
       liveBoard.innerHTML = `
-      <img src='images/heart.png'>
+      <img src='https://ignazka.github.io/spotlight/images/heart.png'>
       <img src='https://ignazka.github.io/spotlight/images/heart.png'>
       <img src='https://ignazka.github.io/spotlight/images/heart.png'>
       `;

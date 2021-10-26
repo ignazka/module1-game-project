@@ -11,8 +11,8 @@ function buildDom(html) {
 function buildSplashScreen() {
   buildDom(`
         <section class="splash-screen">
-        <h1>Spotlight!</h1>
-        <h2>THE GAME</h2>
+        <img id='img-title' src="../images/title.png" />
+        <img id='img-subtitle' src="../images/subtitle.png" />
         
         
        
@@ -36,8 +36,8 @@ function buildGameScreen() {
         <div class="score"></div>
         </div>
         <div id="howToPlay">
-        <span>STAY IN THE LIGHT!</span><br><span id="big-screen">USE MOUSE TO MOVE</span>
-        <span id="small-screen">TOUCH TO MOVE</span>
+        <span>STAY IN THE LIGHT!</span><br><span id="big-screen">USE MOUSE TO MOVE!</span>
+        <span id="small-screen">TOUCH TO MOVE!</span>
         </div>
         <div class="lives"></div>
         </div>
@@ -90,7 +90,7 @@ function buildGameScreen() {
 function buildGameOver() {
   buildDom(`
         <section class="game-over">
-          <h1>GAME OVER</h1>
+          <img id="game-over" src="../images/game-over.png" />
           <div class="box-3">
           <div class="btn btn-restart">
             <span>TRY AGAIN</span>
