@@ -132,6 +132,7 @@ p {
 }
 
 .game-screen {
+  cursor: none;
   display: flex;
   align-items: center;
   height: 100vh;
@@ -266,4 +267,59 @@ p {
 .btn-restart:hover::after {
   opacity: 1;
   transform: scale(1, 1);
+}
+
+/* .btn-arrow {
+  display: none;
+} */
+
+#small-screen {
+  display: none;
+}
+
+#big-screen {
+  color: var(--dark-brown);
+}
+
+@media only screen and (max-width: 768px) {
+  /* .btn-arrow {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  } */
+
+  /* .btn-arrow button {
+    width: 70px;
+    height: 70px;
+    border: solid 1px black;
+    background-color: transparent;
+    margin: 10px 50px;
+    border-radius: 50%;
+  } */
+
+  .score {
+    color: var(--grey);
+    font-size: 1.5em;
+  }
+  #scoreBoard p {
+    font-size: 1em;
+  }
+
+  .lives img {
+    height: 20px;
+  }
+
+  #small-screen {
+    display: block;
+  }
+
+  #big-screen {
+    display: none;
+  }
 }

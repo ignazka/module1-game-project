@@ -10,13 +10,15 @@ class Game {
     this.isGameOver = false;
     this.score = 0;
   }
+
   startLoop() {
     this.spotlight = new Spotlight(this.canvas);
     this.player = new Player(this.canvas, 3, this.spotlight);
 
+
     const loop = () => {
       this.playerScore();
-      this.spotlight.setDifficulty(this.score);
+      // this.spotlight.setDifficulty(this.score);
       this.checkAllCollisions();
       this.updateCanvas();
       this.clearCanvas();
@@ -31,8 +33,8 @@ class Game {
   }
 
   updateCanvas() {
-    this.player.update();
   }
+
   drawCanvas() {
     this.player.draw();
     this.spotlight.draw();
@@ -41,7 +43,8 @@ class Game {
   checkAllCollisions() {
     this.spotlight.checkScreen();
     if (this.player.checkCollisions(this.spotlight)) {
-      this.player.x = this.spotlight.x;
+      this.player.resetPosition();
+      this.spotlight.resetPosition();
       this.player.y = this.spotlight.y;
       this.player.loseLive();
       if (this.player.lives === 0) {

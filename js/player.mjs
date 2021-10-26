@@ -2,7 +2,7 @@ import Game from "./game.mjs";
 
 class Player {
   constructor(canvas, lives, spotlight) {
-    this.radius = 5;
+    this.radius = 8;
     this.lives = lives;
     this.canvas = canvas;
     this.spotlight = spotlight;
@@ -13,13 +13,27 @@ class Player {
     this.speed = 8;
     this.directionY = 0;
     this.directionX = 0;
+
+
   }
-  update() {
-    this.y = this.y + this.directionY * this.speed;
-    this.x = this.x + this.directionX * this.speed;
+
+  resetPosition() {
+    this.x = this.canvas.width / 2;
+    this.y = this.canvas.height / 2;
+  }
+  // update() {
+  //   this.y = this.y + this.directionY * this.speed;
+  //   this.x = this.x + this.directionX * this.speed;
+  // }
+
+  setPosition(x, y) {
+    this.x = x;
+    this.y = y;
   }
 
   draw() {
+
+    console.log(this.x + this.y)
     // let img = new Image();
     // img.src = "https://github.com/ignazka/spotlight/images/player-phase1.png"
     this.ctx.beginPath();
@@ -30,20 +44,15 @@ class Player {
     this.ctx.fill();
   }
 
-  accelerate() {
 
-  }
-
-
-
-  setDirectionY(direction) {
-    this.directionY = direction;
-    this.directionX = 0;
-  }
-  setDirectionX(direction) {
-    this.directionX = direction;
-    this.directionY = 0;
-  }
+  // setDirectionY(direction) {
+  //   this.directionY = direction;
+  //   this.directionX = 0;
+  // }
+  // setDirectionX(direction) {
+  //   this.directionX = direction;
+  //   this.directionY = 0;
+  // }
 
   checkCollisions(spotlight) {
     const checkTop = this.y - this.radius < spotlight.y - spotlight.radius;
@@ -56,6 +65,7 @@ class Player {
 
   loseLive() {
     this.lives--;
+
   }
 
 

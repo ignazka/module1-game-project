@@ -37,13 +37,17 @@ function buildGameScreen() {
         <div class="score"></div>
         </div>
         <div id="howToPlay">
-        <span>STAY IN THE LIGHT!</span><br><span>USE ARROW KEYs TO MOVE</span>
+        <span>STAY IN THE LIGHT!</span><br><span id="big-screen">USE MOUSE TO MOVE</span>
+        <span id="small-screen">TOUCH TO MOVE</span>
         </div>
         <div class="lives"></div>
         </div>
+     
         <canvas></canvas>
+       
         </section>
     `);
+
 
   const canvasElement = document.querySelector("canvas");
   const game = new Game(canvasElement);
@@ -55,48 +59,34 @@ function buildGameScreen() {
 
   game.startLoop();
 
-  const setPlayerDirection = (event) => {
-    if (event.code === "ArrowUp") {
-      game.player.setDirectionY(-1);
-    } else if (event.code === "ArrowDown") {
-      game.player.setDirectionY(1);
-    }
-    if (event.code === "ArrowLeft") {
-      game.player.setDirectionX(-1);
-    } else if (event.code === "ArrowRight") {
-      game.player.setDirectionX(1);
-    }
-    if (event.code === "Space") {
-      const action = {
-        fast() { this.speed === 10; },
-        slow() { this.speed === 2; },
-      };
 
-      const keyAction = {
-        space: { keydown: action.fast, keyup: action.slow },
-      };
-
-      const keyHandler = (event) => {
-        if (event.repeat) return;
-        if (!(event.key in keyAction) || !(event.type in keyAction[event.key])) return;
-        keyAction[event.key][event.type]();
-      };
-
-      ['keydown', 'keyup'].forEach((eventType) => {
-        document.body.addEventListener(eventType, keyHandler);
-      });
-    }
-  };
-
-  const resetPlayerDirection = () => {
-    game.player.setDirectionX(0);
-    game.player.setDirectionY(0);
-  };
-  document.addEventListener("keydown", setPlayerDirection);
-
-  // stop player movement after key release
-  document.addEventListener("keyup", resetPlayerDirection);
+  document.addEventListener('mousemove', (event) => {
+    game.player.setPosition(event.clientX, event.clientY);
+  });
 }
+// const setPlayerDirection = (event) => {
+//   if (event.code === "ArrowUp") {
+//     game.player.setDirectionY(-1);
+//   } else if (event.code === "ArrowDown") {
+//     game.player.setDirectionY(1);
+//   }
+//   if (event.code === "ArrowLeft") {
+//     game.player.setDirectionX(-1);
+//   } else if (event.code === "ArrowRight") {
+//     game.player.setDirectionX(1);
+//   }
+
+// };
+
+// const resetPlayerDirection = () => {
+//   game.player.setDirectionX(0);
+//   game.player.setDirectionY(0);
+// };
+// document.addEventListener("keydown", setPlayerDirection);
+
+// // stop player movement after key release
+//   // document.addEventListener("keyup", resetPlayerDirection);
+// }
 
 function buildGameOver() {
   buildDom(`
@@ -121,4 +111,5 @@ function buildGameOver() {
 const main = () => {
   buildSplashScreen();
 };
+
 window.addEventListener("load", main);
