@@ -11,8 +11,8 @@ function buildDom(html) {
 function buildSplashScreen() {
   buildDom(`
         <section class="splash-screen">
-        <img id='img-title' src="../images/title.png" />
-        <img id='img-subtitle' src="../images/subtitle.png" />
+        <img id='img-title' src="https://ignazka.github.io/spotlight/images/title.png" />
+        <img id='img-subtitle' src="https://ignazka.github.io/spotlight/images/subtitle.png" />
         
         
        
@@ -90,7 +90,7 @@ function buildGameScreen() {
 function buildGameOver() {
   buildDom(`
         <section class="game-over">
-          <img id="game-over" src="../images/game-over.png" />
+          <img id="game-over" src="https://ignazka.github.io/spotlight/images/game-over.png" />
           <div class="box-3">
           <div class="btn btn-restart">
             <span>TRY AGAIN</span>
