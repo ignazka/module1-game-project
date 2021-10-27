@@ -127,7 +127,7 @@ p {
 }
 #img-title {
   width: 500px;
-  align-items: flex-end;
+  position: unset;
 }
 
 #img-subtitle {
@@ -413,5 +413,12 @@ p {
 
   .ctn-final-score .score {
     font-size: 3.8em;
+  }
+
+  .btn-start {
+    color: var(--grey);
+    transition: all 0.5s;
+    position: relative;
+    margin-bottom: 25px;
   }
 }
