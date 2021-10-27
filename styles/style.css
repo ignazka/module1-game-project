@@ -178,6 +178,7 @@ p {
 
 .lives img {
   height: 66px;
+  margin: 4px;
 }
 
 #hud {
