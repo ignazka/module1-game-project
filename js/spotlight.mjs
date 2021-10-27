@@ -26,7 +26,9 @@ class Spotlight {
     // }
     this.y =
       this.y + (Math.random() * this.speed) * this.directionY;
-
+    if (this.canvas.width < 500) {
+      this.radius = this.canvas.height / 6;
+    }
     this.ctx.beginPath();
     this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI, false);
 
