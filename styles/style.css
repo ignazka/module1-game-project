@@ -104,14 +104,14 @@ p {
 }
 .score {
   color: var(--grey);
-  font-size: 2.4em;
+  font-size: 3.2em;
 }
 
 #how-to-play {
   margin-left: 20px;
 }
 #how-to-play span {
-  padding-top: 5px;
+  line-height: 20px;
 }
 
 #how-to-play span:last-child {
@@ -177,8 +177,8 @@ p {
 }
 
 .lives img {
-  height: 66px;
-  margin: 4px;
+  height: 80px;
+  margin: 3px;
 }
 
 #hud {
@@ -348,7 +348,11 @@ p {
   }
 
   .lives img {
-    height: 35px;
+    height: 30px;
+    margin: 2px;
+  }
+  .lives {
+    width: 33%;
   }
 
   #small-screen {
@@ -368,18 +372,27 @@ p {
   }
 
   #game-over {
-    width: 500px;
+    width: 95%;
+    margin-bottom: 100px;
   }
 
   #hud {
-    width: 95%;
+    width: 90%;
     margin-bottom: 10px;
   }
-
   #how-to-play {
-    font-size: 0.55em;
-    line-height: 13px;
-    width: 33%;
+    font-size: 0.5em;
+    line-height: 8px;
+    width: 25%;
+  }
+
+  #how-to-play span {
+    font-size: 0.8em;
+    line-height: 10px;
+  }
+
+  #img-title {
+    width: 80%;
   }
   #img-subtitle {
     width: 70%;
