@@ -19,13 +19,11 @@ class Game {
 
     const loop = () => {
       this.playerScore();
-
       this.spotlight.setDifficulty(this.score);
       this.checkAllCollisions();
       this.updateCanvas();
       this.clearCanvas();
       this.drawCanvas();
-
       if (!this.isGameOver) {
         window.requestAnimationFrame(loop);
       }
@@ -51,7 +49,6 @@ class Game {
       this.player.loseLive();
       if (this.player.lives === 0) {
         this.isGameOver = true;
-
         this.onGameOver();
         this.setHighscore();
       }
@@ -67,7 +64,7 @@ class Game {
   }
 
   setHighscore() {
-    if (window.localStorage.getItem('score').length === 0 || Number(window.localStorage.getItem('score')) < this.score) {
+    if (Number(window.localStorage.getItem('score')) < this.score) {
       window.localStorage.setItem('score', this.score.toFixed(0));
     }
     document.querySelector('#highscore-div').innerHTML = `${window.localStorage.getItem('score')}`;
@@ -82,7 +79,7 @@ class Game {
         if (this.isGameOver) {
           clearInterval(intervalId);
         }
-      }, 1);
+      }, 0.01);
     }
   }
 }

@@ -55,6 +55,7 @@ class Spotlight {
     }
   }
   setDifficulty(score) {
+    // if (this.canvas.width > 500) {
     if (score > 500 && score < 1000) {
 
       this.speed = 3;
@@ -83,14 +84,21 @@ class Spotlight {
       this.radius = this.canvas.height / 8;
     }
     if (score > 4500 && score < 5000) {
-      // this.radius = 50;
+      this.speed = 6;
     }
     if (score > 5000 && score < 5500) {
-      // this.radius = 40;
+      this.speed = 7;
     }
-    if (score > 5500) {
-      // this.radius = 30;
+    if (score > 5500 && score < 6000) {
+      this.speed = 8;
+    }
+    if (score > 6000 && score < 7000) {
+      this.radius = this.canvas.height / 9;
+    }
+    if (score > 7000) {
+      this.radius = this.canvas.height / 10
     }
   }
+  // }
 }
 export default Spotlight;
