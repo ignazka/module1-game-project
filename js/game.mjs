@@ -51,12 +51,19 @@ class Game {
       if (this.player.lives === 0) {
         this.isGameOver = true;
         this.onGameOver();
-        this.setHighscore();
 
       }
     }
   }
+  setHighscore() {
+    if (Number(window.localStorage.getItem('score')) < this.score) {
+      window.localStorage.setItem('score', this.score.toFixed(0));
+    }
 
+    const scoreElement = document.querySelector("#highscore-div");
+    scoreElement.innerHTML = `${this.score.toFixed(0)}`
+    document.querySelector('#highscore-div').innerHTML = `${window.localStorage.getItem('score')}`;
+  }
   clearCanvas() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
@@ -65,14 +72,7 @@ class Game {
     this.onGameOver = callback;
   }
 
-  setHighscore() {
-    if (Number(window.localStorage.getItem('score')) < this.score) {
-      window.localStorage.setItem('score', this.score.toFixed(0));
-    }
-    document.querySelector('#highscore-div').innerHTML = `${window.localStorage.getItem('score')}`;
-    const scoreElement = document.querySelector("#highscore-div");
-    scoreElement.innerHTML = `${this.score.toFixed(0)}`
-  }
+
 
   playerScore() {
     if (!this.isGameOver) {
@@ -81,10 +81,15 @@ class Game {
         const scoreElement = document.querySelector(".current-score");
         scoreElement.innerHTML = `${this.score.toFixed(0)}`;
         if (this.isGameOver) {
+          this.setHighscore();
           clearInterval(intervalId);
+
         }
+
       }, 1);
     }
+
+
   }
 }
 export default Game;
