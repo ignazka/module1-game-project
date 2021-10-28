@@ -19,6 +19,7 @@ class Game {
 
     const loop = () => {
       this.playerScore();
+
       this.spotlight.setDifficulty(this.score);
       this.checkAllCollisions();
       this.updateCanvas();
@@ -51,6 +52,7 @@ class Game {
         this.isGameOver = true;
         this.onGameOver();
         this.setHighscore();
+
       }
     }
   }
@@ -68,18 +70,20 @@ class Game {
       window.localStorage.setItem('score', this.score.toFixed(0));
     }
     document.querySelector('#highscore-div').innerHTML = `${window.localStorage.getItem('score')}`;
+    const scoreElement = document.querySelector("#highscore-div");
+    scoreElement.innerHTML = `${this.score.toFixed(0)}`
   }
 
   playerScore() {
     if (!this.isGameOver) {
       const intervalId = setInterval(() => {
         this.score += 0.01;
-        const scoreElement = document.querySelector(".score");
-        scoreElement.innerHTML = ` ${this.score.toFixed(0)}`;
+        const scoreElement = document.querySelector(".current-score");
+        scoreElement.innerHTML = `${this.score.toFixed(0)}`;
         if (this.isGameOver) {
           clearInterval(intervalId);
         }
-      }, 0.01);
+      }, 1);
     }
   }
 }

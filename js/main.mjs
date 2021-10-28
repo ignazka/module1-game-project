@@ -33,7 +33,7 @@ function buildGameScreen() {
         <div id="hud">
         <div id="scoreBoard">
         <p>SCORE: </p>
-        <div class="score"></div>
+        <div class="score current-score"></div>
         </div>
         <div id="how-to-play">
         <span>STAY IN THE LIGHT!</span><br><span id="big-screen">USE MOUSE TO MOVE!</span>
@@ -101,7 +101,7 @@ function buildGameOver() {
         <div class="ctn-final-score">
           <div class="ctn-score">
           <p>YOUR SCORE:</p>
-          <div class="score"></div>
+          <div class="score current-score"></div>
           </div>
           <div class="ctn-score">
           <p>HIGHSCORE:</p>
