@@ -1,3 +1,6 @@
+import Player from "./player.mjs";
+
+
 class Spotlight {
   constructor(canvas) {
     this.speed = 3;
@@ -10,16 +13,14 @@ class Spotlight {
     this.directionY = 1;
     this.directionX = 1;
 
+
   }
 
-  resetPosition() {
-    this.x = this.canvas.width / 2;
-    this.y = this.canvas.height / 2;
+  resetPosition(player) {
+    this.x = player.x;
+    this.y = player.y;
   }
   draw() {
-
-
-
     // if (Math.random() > 0.2) {
     this.x =
       this.x + (Math.random() * this.speed) * this.directionX;
@@ -34,14 +35,10 @@ class Spotlight {
 
     this.ctx.fillStyle = "#FFE433";
     this.ctx.globalAlpha = 0.2;
-
-
     this.ctx.fill();
   }
 
   checkScreen() {
-
-
     if (this.y - this.radius <= 0) {
       this.directionY = 1;
     } else if (this.y + this.radius >= this.canvas.height) {
@@ -55,7 +52,7 @@ class Spotlight {
     }
   }
   setDifficulty(score) {
-    // if (this.canvas.width > 500) {
+
     if (score > 500 && score < 1000) {
 
       this.speed = 3;
@@ -99,6 +96,5 @@ class Spotlight {
       this.radius = this.canvas.height / 10
     }
   }
-  // }
 }
 export default Spotlight;

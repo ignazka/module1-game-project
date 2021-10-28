@@ -8,19 +8,16 @@ class Player {
     this.spotlight = spotlight;
     this.game = new Game(this.canvas);
     this.ctx = this.canvas.getContext("2d");
-    this.x = this.canvas.width / 2;
-    this.y = this.canvas.height / 2;
+    this.x = Player.x;
+    this.y = Player.y;
     this.speed = 8;
     this.directionY = 0;
     this.directionX = 0;
-
+    this.player = Player;
 
   }
 
-  resetPosition() {
-    this.x = this.canvas.width / 2;
-    this.y = this.canvas.height / 2;
-  }
+
   // update() {
   //   this.y = this.y + this.directionY * this.speed;
   //   this.x = this.x + this.directionX * this.speed;

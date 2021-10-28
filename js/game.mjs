@@ -9,6 +9,7 @@ class Game {
     this.spotlight;
     this.isGameOver = false;
     this.score = 0;
+    this.startCounter = false;
   }
 
   startLoop() {
@@ -16,13 +17,17 @@ class Game {
     this.player = new Player(this.canvas, 3, this.spotlight);
 
 
-
     const loop = () => {
-      this.playerScore();
 
+      this.playerScore();
+      if (!this.startCounter) {
+        this.spotlight.resetPosition(this.player);
+        this.startCounter = true;
+
+      }
       this.spotlight.setDifficulty(this.score);
       this.checkAllCollisions();
-      this.updateCanvas();
+
       this.clearCanvas();
       this.drawCanvas();
       if (!this.isGameOver) {
@@ -33,10 +38,8 @@ class Game {
     window.requestAnimationFrame(loop);
   }
 
-  updateCanvas() {
-  }
-
   drawCanvas() {
+
     this.player.draw();
     this.spotlight.draw();
     this.player.drawLives();
@@ -44,9 +47,8 @@ class Game {
   checkAllCollisions() {
     this.spotlight.checkScreen();
     if (this.player.checkCollisions(this.spotlight)) {
-      this.player.resetPosition();
-      this.spotlight.resetPosition();
-      this.player.y = this.spotlight.y;
+
+      this.spotlight.resetPosition(this.player);
       this.player.loseLive();
       if (this.player.lives === 0) {
         this.isGameOver = true;
