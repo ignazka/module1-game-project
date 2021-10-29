@@ -49,17 +49,52 @@ function buildGameScreen() {
   const canvasElement = document.querySelector("canvas");
   const game = new Game(canvasElement);
 
-  canvasElement.width = window.innerWidth;
-  canvasElement.height = window.innerHeight;
+  const ctx = canvasElement.getContext("2d");
 
   game.gameOverCallback(buildGameOver);
 
-  game.startLoop();
+  canvasElement.width = window.innerWidth;
+  canvasElement.height = window.innerHeight;
+  let countDown = 3;
 
-  document.addEventListener("mousemove", (event) => {
-    game.player.setPosition(event.clientX, event.clientY);
-  });
+  const count = setInterval(() => {
+    if (window.innerWidth < 500) {
+      ctx.textAlign = "center";
+      ctx.font = "150px serif";
+    } else {
+      ctx.font = "250px serif";
+      ctx.textAlign = "start";
+    }
+
+    ctx.fillStyle = "#c6ac8f";
+    if (countDown === 0) {
+      // do not display text
+      ctx.fillText(
+        `GET READY!`,
+        canvasElement.width / 2,
+        canvasElement.height / 2
+      );
+
+      clearInterval(count);
+    }
+    ctx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+    ctx.fillText(
+      `${countDown}`,
+      canvasElement.width / 2,
+      canvasElement.height / 2
+    );
+    countDown--;
+  }, 500);
+
+  setTimeout(function () {
+    console.log("Hello");
+    document.addEventListener("mousemove", (event) => {
+      game.player.setPosition(event.clientX, event.clientY);
+    });
+    game.startLoop();
+  }, 2000);
 }
+
 // const setPlayerDirection = (event) => {
 //   if (event.code === "ArrowUp") {
 //     game.player.setDirectionY(-1);
