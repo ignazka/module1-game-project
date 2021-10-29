@@ -97,6 +97,6 @@ the spotlight moves randomly.
 ## Links
 
 - [Trello Link](https://trello.com/b/Ek2regla/spotlight-the-game)
-- [Slides Link](https://slides.com/ignazka/spotlight-the-game)
+- [Slides Link](https://docs.google.com/presentation/d/1zyXykfXAMQfL4XaUv-koNWRjo5h-kRPNbhXdJ0ndQTg/edit?usp=sharing)
 - [Github repository Link](https://github.com/ignazka/spotlight)
 - [Deployment Link](https://ignazka.github.io/spotlight/)
