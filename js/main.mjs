@@ -7,7 +7,6 @@ function buildDom(html) {
   main.innerHTML = html;
 }
 
-
 function buildSplashScreen() {
   buildDom(`
         <section class="splash-screen">
@@ -47,7 +46,6 @@ function buildGameScreen() {
         </section>
     `);
 
-
   const canvasElement = document.querySelector("canvas");
   const game = new Game(canvasElement);
 
@@ -58,12 +56,9 @@ function buildGameScreen() {
 
   game.startLoop();
 
-
-  document.addEventListener('mousemove', (event) => {
+  document.addEventListener("mousemove", (event) => {
     game.player.setPosition(event.clientX, event.clientY);
   });
-
-
 }
 // const setPlayerDirection = (event) => {
 //   if (event.code === "ArrowUp") {

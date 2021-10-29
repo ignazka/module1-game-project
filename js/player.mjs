@@ -8,15 +8,12 @@ class Player {
     this.spotlight = spotlight;
     this.game = new Game(this.canvas);
     this.ctx = this.canvas.getContext("2d");
-    this.x = Player.x;
-    this.y = Player.y;
+    this.x = this.canvas.width / 2;
+    this.y = this.canvas.height / 2;
     this.speed = 8;
     this.directionY = 0;
     this.directionX = 0;
-    this.player = Player;
-
   }
-
 
   // update() {
   //   this.y = this.y + this.directionY * this.speed;
@@ -29,7 +26,6 @@ class Player {
   }
 
   draw() {
-
     // let img = new Image();
     // img.src = "https://github.com/ignazka/spotlight/images/player-phase1.png"
     this.ctx.beginPath();
@@ -39,7 +35,6 @@ class Player {
     this.ctx.fillStyle = "red";
     this.ctx.fill();
   }
-
 
   // setDirectionY(direction) {
   //   this.directionY = direction;
@@ -61,12 +56,10 @@ class Player {
 
   loseLive() {
     this.lives--;
-
   }
 
-
   drawLives() {
-    const liveBoard = document.querySelector('.lives');
+    const liveBoard = document.querySelector(".lives");
     if (this.lives === 3) {
       liveBoard.innerHTML = `
       <img src='https://ignazka.github.io/spotlight/images/heart.png'>
@@ -85,7 +78,6 @@ class Player {
       <img src='https://ignazka.github.io/spotlight/images/heart.png'>
       `;
     }
-
   }
 }
 export default Player;

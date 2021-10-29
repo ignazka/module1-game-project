@@ -1,6 +1,5 @@
 import Player from "./player.mjs";
 
-
 class Spotlight {
   constructor(canvas) {
     this.speed = 3;
@@ -12,8 +11,6 @@ class Spotlight {
     this.y = this.canvas.height / 2;
     this.directionY = 1;
     this.directionX = 1;
-
-
   }
 
   resetPosition(player) {
@@ -22,11 +19,9 @@ class Spotlight {
   }
   draw() {
     // if (Math.random() > 0.2) {
-    this.x =
-      this.x + (Math.random() * this.speed) * this.directionX;
+    this.x = this.x + Math.random() * this.speed * this.directionX;
     // }
-    this.y =
-      this.y + (Math.random() * this.speed) * this.directionY;
+    this.y = this.y + Math.random() * this.speed * this.directionY;
     if (this.canvas.width < 500) {
       this.radius = this.canvas.height / 6;
     }
@@ -52,9 +47,7 @@ class Spotlight {
     }
   }
   setDifficulty(score) {
-
     if (score > 500 && score < 1000) {
-
       this.speed = 3;
     }
     if (score > 1000 && score < 2000) {
@@ -65,7 +58,6 @@ class Spotlight {
     }
 
     if (score > 2500 && score < 3000) {
-
       this.radius = this.canvas.height / 5;
     }
 
@@ -93,7 +85,7 @@ class Spotlight {
       this.radius = this.canvas.height / 9;
     }
     if (score > 7000) {
-      this.radius = this.canvas.height / 10
+      this.radius = this.canvas.height / 10;
     }
   }
 }
