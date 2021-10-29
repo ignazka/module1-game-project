@@ -58,28 +58,28 @@ function buildGameScreen() {
   let countDown = 3;
 
   const count = setInterval(() => {
-    if (window.innerWidth < 500) {
-      ctx.textAlign = "center";
+    ctx.textAlign = "center";
+
+    if (canvasElement.width > 500) {
       ctx.font = "150px serif";
     } else {
-      ctx.font = "250px serif";
-      ctx.textAlign = "start";
+      ctx.font = "50px serif";
     }
 
     ctx.fillStyle = "#c6ac8f";
     if (countDown === 0) {
       // do not display text
-      ctx.fillText(
-        `GET READY!`,
-        canvasElement.width / 2,
-        canvasElement.height / 2
-      );
+      // ctx.fillText(
+      //   `GET READY!`,
+      //   canvasElement.width / 2,
+      //   canvasElement.height / 2
+      // );
 
       clearInterval(count);
     }
     ctx.clearRect(0, 0, canvasElement.width, canvasElement.height);
     ctx.fillText(
-      `${countDown}`,
+      `Get Ready! ${countDown}`,
       canvasElement.width / 2,
       canvasElement.height / 2
     );
